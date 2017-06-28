@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Nav from './components/Nav/Nav';
-import Banner from './components/Banner/Banner';
+import Nav from './components/Nav';
+import Banner from './components/Banner';
 import Home from './components/Home';
-import Add from './components/Add/Add';
+import Add from './components/Add';
 import './App.css';
 
 class App extends Component {

@@ -3,17 +3,41 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "flux": "^3.1.2",
+    "glamor": "^2.20.25",
+    "glamorous": "^3.14.0",
+    "moment": "^2.18.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "@kadira/react-storybook-addon-info": "^3.4.0",
+    "@kadira/storybook": "^2.21.0",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
+    "jest-fetch-mock": "^1.1.1",
+    "react-addons-test-utils": "^15.5.1",
+    "react-scripts": "0.9.5",
+    "react-test-render": "^1.0.3",
+    "react-test-renderer": "^15.5.4",
+    "storybook-router": "^0.2.3",
+    "stylus": "^0.54.5"
   },
   "scripts": {
+    "css": "stylus -w src/stylus/index.styl -o src/stylus/index.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom --coverage --watch -u",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "proxy": "http://localhost:3001",
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
   }
 }

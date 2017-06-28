@@ -1,32 +1,19 @@
 import React, { Component } from 'react';
+import glamorous from 'glamorous'
+import moment from 'moment';
 import Book from './Book';
 
-class BookList extends Component {
-  constructor () {
-    super();
-    this.bookList = [{
-      _id:'1',
-      title: 'El Quijote',
-      author: 'Miguel de Cervantes',
-      price: '$75.00',
-      date :'12-03-1860',
-    },
-    {
-      _id:'1',
-      title: 'El Quijote',
-      author: 'Miguel de Cervantes',
-      price: '$75.00',
-      date :'12-03-1860',
-    }];
-  }
+const Div =  glamorous.div({
+  width: '100%',
+  display: 'flex',
+  boxSizing: 'border-box',
+  flexWrap: 'wrap',
+});
 
-  render() {
-    return (
-      <div className="books-container">
-        { this.bookList.map((book,i) => <Book book={book} key={i}/> )}
-      </div>
-    )
-  }
-}
+const BookList  = ({ bookList, getDate }) =>(
+  <Div className="books-container">
+    { bookList.map((book,i) => <Book book={book} key={book._id} /> )}
+  </Div>
+) 
 
 export default BookList;
